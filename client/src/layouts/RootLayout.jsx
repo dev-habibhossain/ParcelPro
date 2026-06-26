@@ -5,7 +5,7 @@ import Navbar from "../pages/Shared/Navbar/Navbar";
 export default function RootLayout() {
   return (
     
-      <div className="max-w-7xl mx-auto my-4"> 
+      <div className="max-w-7xl mx-auto py-4"> 
         <Navbar />
         <Outlet />
         <Footer />
