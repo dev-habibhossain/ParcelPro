@@ -4,13 +4,11 @@ import Navbar from "../pages/Shared/Navbar/Navbar";
 
 export default function RootLayout() {
   return (
-    <section className="bg-[#EAECED]">
-
-      <div className="max-w-[1600px] mx-auto">
+    
+      <div className="max-w-7xl mx-auto my-4"> 
         <Navbar />
         <Outlet />
         <Footer />
       </div>
-    </section>
   );
 }

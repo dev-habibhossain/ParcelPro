@@ -1,15 +1,16 @@
 import { FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
+import Logo from "../../../components/Logo/Logo";
 export default function Footer() {
   return (
-    <div className="m-4">
       <footer className="footer footer-center bg-[#0B0B0B] text-white rounded-xl p-10 flex flex-col gap-5">
         {/* 1st Line: Logo Name */}
-        <aside className="w-full">
-          <h2 className="text-3xl font-bold tracking-wider text-white">
-            PercelPro
-          </h2>
+        <aside className=" flex justify-center">
+         
+          <Link to={'/'}>
+            <Logo />
+          </Link>
         </aside>
 
         {/* 2nd Line: Website Paragraph */}
@@ -22,7 +23,7 @@ export default function Footer() {
         </div>
 
         {/* 3rd Line: 6 Nav Items with Top and Bottom Borders & Margins */}
-        <nav className="w-full border-t border-b border-gray-800 py-4 my-2">
+        <nav className="w-full border-dotted  border-t-2 border-b-2 border-gray-800 py-4 my-2">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">
             <a
               href="#"
@@ -75,6 +76,5 @@ export default function Footer() {
           </div>
         </nav>
       </footer>
-    </div>
   );
 }
