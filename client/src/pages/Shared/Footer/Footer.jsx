@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import Logo from "../../../components/Logo/Logo";
 export default function Footer() {
   return (
-      <footer className="footer footer-center bg-[#0B0B0B] text-white rounded-xl p-10 flex flex-col gap-5">
+      <footer className="footer footer-center bg-[#0B0B0B] text-white rounded-2xl p-10 flex flex-col gap-5">
         {/* 1st Line: Logo Name */}
         <aside className=" flex justify-center">
          

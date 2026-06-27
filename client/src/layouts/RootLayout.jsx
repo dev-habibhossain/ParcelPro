@@ -5,9 +5,11 @@ import Navbar from "../pages/Shared/Navbar/Navbar";
 export default function RootLayout() {
   return (
     
-      <div className="max-w-7xl mx-auto py-4"> 
+      <div className="max-w-7xl mx-auto pt-6"> 
         <Navbar />
-        <Outlet />
+        <div className="min-h-screen">
+          <Outlet />
+        </div>
         <Footer />
       </div>
   );
