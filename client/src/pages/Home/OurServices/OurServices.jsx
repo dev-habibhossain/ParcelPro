@@ -17,15 +17,15 @@ export default function OurServices() {
     },
     {
       title: "Cash on Delivery (COD)",
-      desc: "Enjoy hassle-free cash collection with our secure, fast, and transparent payment cycle directly into your account.",
+      desc: "100% cash on delivery anywhere in Bangladesh with guaranteed safety of your product.",
     },
     {
-      title: "Corporate Logistics",
-      desc: "Tailored supply chain solutions, bulk movement, and dedicated transportation support for corporate clients and businesses.",
+      title: "Corporate Service / Contract In Logistics",
+      desc: "Customized corporate services which includes warehouse and inventory management support.",
     },
     {
-      title: "Real-time Tracking",
-      desc: "Keep an eye on your shipments with our advanced real-time GPS tracking system and instant SMS/email updates.",
+      title: "Parcel Return",
+      desc: "Through our reverse logistics facility we allow end customers to return or exchange their products with online business merchants.",
     },
   ];
 
@@ -48,7 +48,7 @@ export default function OurServices() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="w-full bg-primary rounded-2xl border border-opacity-10 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-between text-center p-6 sm:p-8"
+            className="w-full bg-primary rounded-2xl border border-opacity-10 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-between text-center p-6 sm:p-8 hover:bg-accent "
           >
             <div className="flex flex-col items-center gap-4">
               {/* Image Container */}
@@ -61,7 +61,7 @@ export default function OurServices() {
               </div>
 
               {/* Card Title */}
-              <h3 className="text-2xl font-bold text-secondary mt-2">
+              <h3 className="text-xl font-bold text-secondary mt-2">
                 {service.title}
               </h3>
 
