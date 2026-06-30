@@ -3,6 +3,9 @@ import HowItWorks from "../HowItWorks/HowItWorks";
 import OurServices from "../OurServices/OurServices";
 import Brands from "../Brands/Brands";
 import Support from "../Support/Support";
+import Reviews from "../Reviews/Reviews";
+
+const reviewsPromise = fetch('/public/reviews.json').then(res => res.json());
 
 export default function Home() {
   return (
@@ -17,8 +20,8 @@ export default function Home() {
         <div className="border-dotted border-neutral border-b-2 "></div>
         <Support />
         <div className="border-dotted border-neutral border-b-2"></div>
-        
       </div>
+      <Reviews reviewsPromise={reviewsPromise} />
     </div>
   );
 }
