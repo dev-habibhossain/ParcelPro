@@ -1,23 +1,24 @@
+import { NavLink } from "react-router";
 import Logo from "../../../components/Logo/Logo";
 
 export default function Navbar() {
   const links = (
     <>
       <li>
-        <a>Services</a>
+        <NavLink to="/services">Services</NavLink>
       </li>
       <li>
-        <a>Coverage</a>
+        <NavLink to="/coverage">Coverage</NavLink>
       </li>
       <li>
-        <a>About Us</a>
+        <NavLink>About Us</NavLink>
       </li>
       <li>
-        <a>Pricing</a>
+        <NavLink>Pricing</NavLink>
       </li>
       <li>
-        <a>Be a Rider</a>
-      </li> 
+        <NavLink>Be a Rider</NavLink>
+      </li>
     </>
   );
   return (
@@ -48,12 +49,12 @@ export default function Navbar() {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl"><Logo /></a>
+        <a className="btn btn-ghost text-xl">
+          <Logo />
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Button</a>
