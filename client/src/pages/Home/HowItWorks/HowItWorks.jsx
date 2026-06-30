@@ -5,7 +5,7 @@ import { SiCashapp } from "react-icons/si";
 
 export default function HowItWorks() {
   return (
-    <section className="px-4 md:px-0">
+    <section className="md:px-0 px-12">
       <h1 className="text-2xl text-secondary pb-6 font-bold ">How It Works</h1>
       {/* Changed flex to flex-wrap for responsiveness */}
       <div className="flex flex-wrap md:flex-nowrap gap-3 justify-center items-center">

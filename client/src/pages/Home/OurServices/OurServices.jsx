@@ -30,13 +30,13 @@ export default function OurServices() {
   ];
 
   return (
-    <section className="w-full rounded-4xl max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
+    <section className="w-full rounded-4xl max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:px-8 bg-secondary">
       {/* Optional: Section Title Area */}
       <div className="text-center mb-12">
-        <h2 className="text-5xl font-extrabold text-primary mb-4">
+        <h2 className="md:text-5xl text-3xl font-extrabold text-primary mb-4">
           Our Services
         </h2>
-        <p className="text-primary text-lg max-w-2xl mx-auto">
+        <p className="text-primary md:text-lg text-sm max-w-2xl mx-auto">
           Enjoy fast, reliable parcel delivery with real-time tracking and zero
           hassle. From <br /> personal packages to business shipments — we
           deliver on time, every time.
@@ -52,7 +52,7 @@ export default function OurServices() {
           >
             <div className="flex flex-col items-center gap-4">
               {/* Image Container */}
-              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-linear-to-b from-[#EEEDFC] to-transparent p-2">
+              <div className="md:w-20 md:h-20 flex items-center justify-center rounded-full bg-linear-to-b from-[#EEEDFC] to-transparent p-2">
                 <img
                   src={ServicesImg}
                   alt={service.title}
@@ -61,12 +61,12 @@ export default function OurServices() {
               </div>
 
               {/* Card Title */}
-              <h3 className="text-xl font-bold text-secondary mt-2">
+              <h3 className="md:text-xl text-lg font-bold text-secondary mt-2">
                 {service.title}
               </h3>
 
               {/* Card Description */}
-              <p className="text-neutral text-base leading-relaxed mt-1">
+              <p className="text-neutral md:text-md text-sm font-semibold leading-relaxed mt-1">
                 {service.desc}
               </p>
             </div>

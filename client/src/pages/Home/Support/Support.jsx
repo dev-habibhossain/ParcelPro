@@ -21,7 +21,7 @@ export default function Support() {
   ];
 
   return (
-    <section className="w-full  mx-auto py-12">
+    <section className="w-full  mx-auto py-12 md:px-0 px-8">
       {/* List Container */}
       <div className="flex flex-col gap-6">
         {data.map((item, index) => (
