@@ -23,3 +23,7 @@ body{
   font-style: normal;
   background-color: #EAECED;
 }
+
+.smooth-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
