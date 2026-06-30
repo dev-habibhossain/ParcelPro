@@ -4,7 +4,13 @@ export default function ReviewCard({ review, isActive }) {
   const { userName, review: testimonial, user_photoURL, user_email } = review;
 
   return (
-    <div className="max-w-sm bg-base-100 rounded-xl p-6 border border-gray-200 mx-auto">
+    <div
+      className={`max-w-sm bg-base-100 rounded-xl p-6 border mx-auto transition-all duration-300 ease-in-out ${
+        isActive
+          ? "opacity-100 border-gray-200" // 👈 Fully visible, clean border, no heavy shadow overlays
+          : "opacity-30 border-transparent shadow-none" // 👈 Zero shadow when low opacity
+      }`}
+    >
       <img
         src={reviewCuote}
         className="text-secondary text-2xl mb-4"
