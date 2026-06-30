@@ -1,33 +1,34 @@
 import { use } from "react";
-import reviewCuote from "../../../assets/reviewQuote.png"
-export default function Reviews({reviewsPromise}) {
+import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ReviewCard from "./ReviewCard";
+export default function Reviews({ reviewsPromise }) {
   const reviews = use(reviewsPromise);
-  console.log(reviews);
   return (
-  <section>
-    <div>
+    <section>
+      <div></div>
 
-    </div>
-
-    {/* Review box */}
-    <div>
-      <img src={reviewCuote} alt="" />
-      <p>review</p>
-      <span>dotted line</span>
-      <div>
-        <img src="" alt="profile" />
-        <div>
-          <h1>name</h1>
-          <p>senior developer</p>
-        </div>
-      </div>
-    </div>
-    {/* Review paginator */}
-    <div>
-      <div>left btn rounded bg-primary text-secondary circle left arrow</div>
-      <div>dot dot dot as paginator</div>
-      <div>right btn rounded bg-accent text-secondary circle right  arrow</div>
-    </div>
-  </section>
-  )
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+      >
+        {reviews.map((review) => (
+          <SwiperSlide key={review.id}>
+            <ReviewCard review={review} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+  );
 }
