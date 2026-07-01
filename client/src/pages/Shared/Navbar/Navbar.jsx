@@ -49,9 +49,9 @@ export default function Navbar() {
             {links}
           </ul>
         </div>
-        <NavLink to="/" className="btn btn-ghost text-xl">
+        <a className="btn btn-ghost text-xl">
           <Logo />
-        </NavLink>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>

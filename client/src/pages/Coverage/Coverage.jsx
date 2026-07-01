@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router";
-import { FaSearch } from "react-icons/fa";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { useRef } from "react";
+import { FaSearch } from "react-icons/fa";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { useLoaderData } from "react-router";
 
 // 🎨 Styled Custom Pin: Custom SVG markup to create a premium, brand-matching marker
 const customIcon = L.divIcon({
@@ -24,14 +25,29 @@ const Coverage = () => {
 
   // 📥 Fetch location data directly from your route loader setup
   const hubLocations = useLoaderData() || [];
+  const mapRef = useRef(null);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const location = e.target.location.value;
+    const district = hubLocations.find((c) =>
+      c.district.toLowerCase().includes(location.toLowerCase()),
+    );
+    if (district) {
+      const coord = [district.latitude, district.longitude];
+      mapRef.current.flyTo(coord, 12, { animate: true });
+    }
+  };
   return (
     <div className="rounded-2xl bg-primary my-6">
       <div className="md:p-16 p-8">
         <h1 className="text-secondary font-extrabold text-3xl">
           We are available in 64 districts
         </h1>
-        <div className="relative flex items-center max-w-sm my-8">
+        <form
+          onSubmit={handleSearch}
+          className="relative flex items-center max-w-sm my-8"
+        >
           <label className="input input-bordered flex items-center gap-3 w-full pr-24 rounded-full">
             <FaSearch className="text-base-content/50" />
             <input
@@ -39,12 +55,15 @@ const Coverage = () => {
               placeholder="Search here..."
               className="grow bg-transparent outline-none border-none"
               required
+              name="location"
             />
           </label>
-          <button className="btn btn-accent btn-sm absolute right-1.5 rounded-full text-secondary px-8">
-            Search
-          </button>
-        </div>
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-accent btn-sm absolute right-1.5 rounded-full text-secondary px-8"
+          />
+        </form>
         <div className="border-t border-dashed border-neutral"></div>
         <h1 className="text-secondary font-extrabold text-xl my-8">
           We deliver almost all over Bangladesh
@@ -56,6 +75,7 @@ const Coverage = () => {
             zoom={7}
             scrollWheelZoom={false}
             className="h-full w-full rounded-xl"
+            ref={mapRef}
           >
             {/* 💎 Premium Minimal Light Map Tile Theme */}
             <TileLayer
@@ -81,7 +101,7 @@ const Coverage = () => {
                         District: {hub.district} ({hub.region} Region)
                       </p>
                       {hub.covered_area && (
-                        <p className="text-neutral/80 text-[11px] m-0 mt-1 max-w-[180px] leading-tight">
+                        <p className="text-neutral/80 text-[11px] m-0 mt-1 max-w-45 leading-tight">
                           <strong>Covered Areas:</strong>{" "}
                           {hub.covered_area.join(", ")}
                         </p>
